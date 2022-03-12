@@ -1,0 +1,42 @@
+package jroid.kakaotalk.server.entity.entity;
+
+import jroid.kakaotalk.server.entity.chat.Chat;
+import jroid.kakaotalk.server.entity.map.GameMapRespawn;
+import lombok.*;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@javax.persistence.Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Entity {
+    
+    @Id
+    @Column
+    Long id;
+    
+    @Column(nullable = false, length = 63, unique = true)
+    String des;
+    
+    @ManyToOne
+    @JoinColumn(name = "spawn_chat_id", nullable = false)
+    Chat spawnChat;
+    
+    @ManyToOne
+    @JoinColumn(name = "fight_chat_id", nullable = false)
+    Chat fightChat;
+    
+    @Builder.Default
+    @OneToMany(mappedBy = "entity", cascade = CascadeType.ALL)
+    List<CreatedEntity> createdEntityList = new ArrayList<>();
+    
+    @Builder.Default
+    @OneToMany(mappedBy = "pk.entity", cascade = CascadeType.ALL)
+    List<GameMapRespawn> gameMapRespawnList = new ArrayList<>();
+    
+}

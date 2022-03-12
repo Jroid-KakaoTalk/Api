@@ -1,0 +1,36 @@
+package jroid.kakaotalk.server.entity.chat;
+
+import jroid.kakaotalk.server.entity.npc.Npc;
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ChatAnyResponse {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    Long id;
+    
+    @Column(nullable = false, length = 63)
+    String anyResponse;
+    
+    @ManyToOne
+    @JoinColumn(name = "chat_id", nullable = false)
+    Chat chat;
+    
+    @ManyToOne
+    @JoinColumn(name = "target_chat_id", nullable = false)
+    Chat targetChat;
+    
+    @ManyToOne
+    @JoinColumn(name = "npc_id")
+    Npc npc;
+    
+}
