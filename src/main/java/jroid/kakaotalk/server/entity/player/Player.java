@@ -30,7 +30,13 @@ public class Player {
     @Column
     Long id;
     
-    @Column(nullable = false, length = 20, unique = true)
+    @Column(nullable = false)
+    String sender;
+    
+    @Column(nullable = false)
+    String image;
+    
+    @Column(nullable = false, length = 31, unique = true)
     String name;
     
     @CreationTimestamp
@@ -59,7 +65,7 @@ public class Player {
     
     @Builder.Default
     @Column(columnDefinition = "TINYINT UNSIGNED NOT NULL")
-    Integer doing = Doing.NONE.value;
+    Integer doing = Doing.NONE.getValue();
     
     @Builder.Default
     @Column(columnDefinition = "TINYINT UNSIGNED NOT NULL")

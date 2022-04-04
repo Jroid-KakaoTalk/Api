@@ -31,6 +31,12 @@ public class GameLog {
     @Column(nullable = false)
     String log;
     
+    @Column(nullable = false)
+    String sender;
+    
+    @Column(nullable = false)
+    String image;
+    
     @ManyToOne
     @JoinColumn
     Player player;

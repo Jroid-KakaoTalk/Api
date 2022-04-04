@@ -10,7 +10,7 @@ public enum EquipType implements ValuedEnum<Integer> {
     AMULET(8);
     
     public static final EnumFinder<Integer, EquipType> finder = EnumFinder.getFinder(EquipType.values());
-    public final int value;
+    private final int value;
     
     EquipType(int value) {
         this.value = value;

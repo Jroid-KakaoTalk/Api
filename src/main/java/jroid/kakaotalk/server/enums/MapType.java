@@ -8,7 +8,7 @@ public enum MapType implements ValuedEnum<Integer> {
     SEA(4);
     
     public static final EnumFinder<Integer, MapType> finder = EnumFinder.getFinder(MapType.values());
-    public final int value;
+    private final int value;
     
     MapType(int value) {
         this.value = value;

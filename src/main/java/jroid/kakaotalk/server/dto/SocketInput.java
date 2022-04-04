@@ -2,17 +2,19 @@ package jroid.kakaotalk.server.dto;
 
 import lombok.*;
 
-import java.util.Map;
+import java.util.List;
 
 @Getter
-@Setter
 @Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class SocketInput {
     
-    String method;
-    Map<String, Object> data;
+    private String method;
+    private String sender;
+    private String image;
+    private String message;
+    private List<String> data;
     
 }

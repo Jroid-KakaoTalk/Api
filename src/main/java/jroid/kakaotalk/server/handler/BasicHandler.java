@@ -1,11 +1,12 @@
 package jroid.kakaotalk.server.handler;
 
-import jroid.kakaotalk.server.dto.SocketInput;
 import jroid.kakaotalk.server.dto.SocketOutput;
-import org.springframework.lang.NonNull;
+import jroid.kakaotalk.server.entity.player.Player;
+
+import java.util.List;
 
 public interface BasicHandler {
     
-    SocketOutput handleMessage(@NonNull SocketInput input) throws Exception;
+    SocketOutput handleMessage(List<String> data, Player player) throws RuntimeException;
     
 }

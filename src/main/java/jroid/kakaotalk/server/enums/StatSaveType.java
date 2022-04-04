@@ -8,7 +8,7 @@ public enum StatSaveType implements ValuedEnum<Integer> {
     BUFF(4);
     
     public static final EnumFinder<Integer, StatSaveType> finder = EnumFinder.getFinder(StatSaveType.values());
-    public final int value;
+    private final int value;
     
     StatSaveType(int value) {
         this.value = value;

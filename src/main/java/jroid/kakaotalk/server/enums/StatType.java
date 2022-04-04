@@ -1,5 +1,8 @@
 package jroid.kakaotalk.server.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum StatType implements ValuedEnum<Integer> {
     
     MAXHP(1, 1),
@@ -20,8 +23,8 @@ public enum StatType implements ValuedEnum<Integer> {
     ACC(16, 1);
     
     public static final EnumFinder<Integer, StatType> finder = EnumFinder.getFinder(StatType.values());
-    public final int value;
-    public final int useSp;
+    private final int value;
+    private final int useSp;
     
     StatType(int value, int useSp) {
         this.value = value;

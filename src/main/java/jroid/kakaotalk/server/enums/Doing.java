@@ -6,7 +6,7 @@ public enum Doing implements ValuedEnum<Integer> {
     MINE(1);
     
     public static final EnumFinder<Integer, Doing> finder = EnumFinder.getFinder(Doing.values());
-    public final int value;
+    private final int value;
     
     Doing(int value) {
         this.value = value;

@@ -1,5 +1,6 @@
 package jroid.kakaotalk.server.dto;
 
+import jroid.kakaotalk.server.enums.SocketStatus;
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,12 +12,15 @@ import java.util.Map;
 public class SocketOutput {
     
     @Builder.Default
-    int status = 1;
+    int status = SocketStatus.SUCCESS.getValue();
+    
+    String message;
+    
+    String sender;
+    
+    String image;
     
     @Builder.Default
-    String message = "Success";
-    
-    @Builder.Default
-    Map<String, Object> result = new HashMap<>();
+    Map<String, Object> data = new HashMap<>();
     
 }

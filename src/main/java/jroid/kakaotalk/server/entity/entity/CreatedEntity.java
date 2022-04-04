@@ -44,7 +44,7 @@ public class CreatedEntity {
     
     @Builder.Default
     @Column(columnDefinition = "TINYINT UNSIGNED NOT NULL")
-    Integer doing = Doing.NONE.value;
+    Integer doing = Doing.NONE.getValue();
     
     @Column(nullable = false)
     Integer location;

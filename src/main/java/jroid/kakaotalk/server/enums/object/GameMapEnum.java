@@ -4,19 +4,20 @@ import jroid.kakaotalk.server.base.Location;
 import jroid.kakaotalk.server.enums.EnumFinder;
 import jroid.kakaotalk.server.enums.MapType;
 import jroid.kakaotalk.server.enums.ValuedEnum;
+import lombok.Getter;
 import org.springframework.lang.NonNull;
 
+@Getter
 public enum GameMapEnum implements ValuedEnum<Integer> {
     START_VILLAGE(63, 63, 1, MapType.VILLAGE),
     QUIET_BEACH(64, 63, 1, MapType.SEA),
     ADVENTURE_FIELD(64, 64, 1, MapType.FIELD);
     
-    public static final EnumFinder<Integer, GameMapEnum> finder =
-        EnumFinder.getFinder(GameMapEnum.values());
+    private static final EnumFinder<Integer, GameMapEnum> finder = EnumFinder.getFinder(GameMapEnum.values());
     
-    public final int location;
-    public final int requireLv;
-    public final MapType mapType;
+    private final int location;
+    private final int requireLv;
+    private final MapType mapType;
     
     GameMapEnum(int x, int y, int requireLv, @NonNull MapType mapType) {
         this.location = Location.toHex(x, y);
